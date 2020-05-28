@@ -63,7 +63,7 @@ function EditUserModal(){
           />
         </p>
         
-          <button className="delete">
+          <button className="edit">
             Close
           </button>
         
