@@ -4,10 +4,12 @@ import axios from 'axios'
 export const UsersContext = React.createContext()
 
 
-
 function UsersProvider(props){
 
 const [userList, setUserList ] = useState([])
+const [userToEdit, setUserToEdit] = useState()
+const [userToDelete, setUserToDelete] = useState()
+const [userEdited, setUserEdited]= useState()
 
 useEffect(()=>{
     query()
@@ -23,11 +25,32 @@ const query = async () => {
 
 }
 
+useEffect(() => {
+    updateUserList()
+  }, [userEdited])
+
+ 
+
+  const updateUserList = () => {
+   
+    const usersUpdated = userList.map((user)=> {
+      return user.login.uuid === userEdited.login.uuid ? userEdited : user
+    })
+    setUserList(usersUpdated)
+  }
+
+
 
     return(
         <UsersContext.Provider
             value={{
                 userList,
+                setUserToEdit,
+                setUserToDelete,
+                userToDelete,
+                userToEdit,
+                setUserEdited,
+                userEdited
             }}>
                 {props.children}
         </UsersContext.Provider>
