@@ -34,7 +34,7 @@ function EditUserModal(){
         <img
           src={userToEdit && userToEdit.picture.large}
         />
-        <h1 className="user__name">
+        <h1>
           <input
             type="text"
             placeholder="First name"
@@ -53,7 +53,7 @@ function EditUserModal(){
           </span>
         </h1>
 
-        <p className="user__phone">
+        <p>
           <input
             type="text"
             placeholder="Phone number"
@@ -62,11 +62,11 @@ function EditUserModal(){
            
           />
         </p>
-        <div className="actions">
+        
           <button className="delete">
             Close
           </button>
-        </div>
+        
       </form>
 
         </Modal>
