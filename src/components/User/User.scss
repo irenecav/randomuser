@@ -1,0 +1,66 @@
+@mixin shadow {
+    -webkit-box-shadow: 10px 10px 26px -12px rgba(9, 76, 130, 0.22);
+    -moz-box-shadow: 10px 10px 26px -12px rgba(9, 76, 130, 0.22);
+    box-shadow: 10px 10px 26px -12px rgba(9, 76, 130, 0.22);
+  }
+  
+  .user {
+    text-align: center;
+    list-style: none;
+    background-color: white;
+    width: 270px;
+    height: 270px;
+    padding: 20px;
+    display: inline-block;
+    margin: 20px;
+    color: #050c46;
+    @include shadow;
+  
+    img {
+      display: inline-block;
+      border-radius: 100%;
+    }
+  
+    h1 {
+      font-size: 1rem;
+      span {
+        display: block;
+      }
+    }
+  
+    button {
+      margin: 5px;
+      width: 110px;
+      border-radius: 4px;
+      display: inline-block;
+      cursor: pointer;
+      font-family: "Montserrat", sans-serif;
+      font-size: 12px;
+      padding: 9px 23px;
+      border: none;
+    }
+  }
+  
+  .edit {
+    background-color: #14a4ff;
+    color: white;
+  
+    &:active {
+      position: relative;
+      top: 1px;
+    }
+  }
+  
+  .delete {
+    background-color: #cee3fd;
+    color: #14a4ff;
+  
+    &:hover {
+      color: #1386ce;
+    }
+    &:active {
+      position: relative;
+      top: 1px;
+    }
+  }
+  

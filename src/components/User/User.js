@@ -1,5 +1,7 @@
 import React, { useContext, Component } from 'react';
 import { UsersContext } from '../../context/UsersContext';
+import "./User.scss";
+
 
 class User extends Component{
 
@@ -17,12 +19,14 @@ render(){
                     <span>{user.name.last}</span>
                 </h1>
                 <p>{user.phone}</p>
-                <div className="actions">
+               
                 <button
+                className="edit"
                 onClick={e => setUserToEdit(user)}>Edit</button>
                 <button
+                className="delete"
                 onClick={e => setUserToDelete(user)}>Delete</button>
-                </div>
+                
             </li>
              ) }
 

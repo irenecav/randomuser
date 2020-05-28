@@ -39,6 +39,20 @@ useEffect(() => {
     setUserList(usersUpdated)
   }
 
+  useEffect(() => {
+    deletedUserList()
+  }, [userToDelete])
+
+
+  const deletedUserList = () => {
+    
+    const usersDeletedOne = userList.filter((user)=> {
+      return user.login.uuid !== userToDelete.login.uuid
+    })
+
+    setUserList(usersDeletedOne)
+  }
+
 
 
     return(
